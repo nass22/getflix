@@ -1,0 +1,30 @@
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "open sans";
+}
+input[typye="email"] {
+    border-bottom-left-radius: 0px;;
+    border-bottom-right-radius: 0px;;
+}
+
+input[typye="password"] {
+    border-top-left-radius: 0px;;
+    border-top-right-radius: 0px;;
+    border-top: 0px ;
+} 
+
+
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.h3 {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
