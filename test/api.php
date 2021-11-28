@@ -1,5 +1,5 @@
 <?php
-    include("config.php");
+    include("../sources/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +40,9 @@
 <body>
 
     <?php
-    $url = "https://api.themoviedb.org/3/discover/movie?api_key=0374b79f54a000c4b81f9c12db4437df&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate";
-    //$url2= "https://api.themoviedb.org/3/discover/movie?api_key=0374b79f54a000c4b81f9c12db4437df&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate";
-    //$url3=
+    $apiKey='0374b79f54a000c4b81f9c12db4437df';
+    $url = "https://api.themoviedb.org/3/discover/movie?api_key=".$apiKey."&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate";
+    
     $curl = curl_init();
 
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -60,6 +60,12 @@
         $overview[$i] = $films[$i]->overview;
         $picture[$i] = $films[$i]->backdrop_path;
         $urlImg = "https://image.tmdb.org/t/p/w185" . $picture[$i];
+        //$insert = $db->prepare('INSERT INTO movies(title, overview, url_img, url_video) VALUES (:tile, :overview, :url_img, :url_video)');
+        /*$insert->bindParam(':title', $inputUsername);
+        $insert->bindParam(':overview', $url);
+        $insert->bindParam(':url_img', $urlImg);
+        $insert->bindParam(':url_video', $urlVideo);
+        $insert->execute();*/
     ?>
 
         <div class="card" style="width: 18rem;">

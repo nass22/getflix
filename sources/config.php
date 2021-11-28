@@ -10,9 +10,8 @@ try{
         "mysql:host=$servname;dbname=$dbname;charset=utf8", $user, $password);
         //On définit le mode d'erreur de PDO sur Exception
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Ca marche";
 } catch (Exception $e){
-     /*On capture les exceptions si une exception est lancée et on affiche les informations relatives à celle-ci*/
+    //On capture les exceptions si une exception est lancée et on affiche les informations relatives à celle-ci
     die('Erreur: ' . $e->getMessage());
 }
 

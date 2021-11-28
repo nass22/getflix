@@ -1,6 +1,6 @@
 <?php
 include("sources/config.php");
-include("functions.php");
+include("sources/functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ include("functions.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <link rel="stylesheet" href="sources/styleSign.css">
+    <link rel="stylesheet" href="sources/style.css">
     <title>GETFLIX Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -61,7 +61,7 @@ include("functions.php");
         $login = $loginStm->fetch();
         $pwHashed = $login[0];
         if (password_verify($inputPassword, $pwHashed)) {
-            header("Location:merci.php"); //A décommenter quand on aura l'index.php
+            header("Location:home.php");
         } else {
             echo 'Votre login/mot de passe est incorrect!';
         }
