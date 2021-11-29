@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 23 nov. 2021 à 00:38
+-- Généré le : lun. 29 nov. 2021 à 13:10
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -57,9 +57,11 @@ CREATE TABLE `login` (
 
 CREATE TABLE `movies` (
   `id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `summary` text NOT NULL,
-  `category` varchar(50) NOT NULL
+  `id_movie` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `overview` text NOT NULL,
+  `poster` varchar(100) NOT NULL,
+  `video_key` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

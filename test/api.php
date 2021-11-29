@@ -60,7 +60,7 @@
         $overview[$i] = $films[$i]->overview;
         $picture[$i] = $films[$i]->backdrop_path;
         $urlImg = "https://image.tmdb.org/t/p/w185" . $picture[$i];
-        //$insert = $db->prepare('INSERT INTO movies(title, overview, url_img, url_video) VALUES (:tile, :overview, :url_img, :url_video)');
+        //$insert = $db->prepare('INSERT INTO movies(title, overview, url_img, url_video) VALUES (:title, :overview, :url_img, :url_video)');
         /*$insert->bindParam(':title', $inputUsername);
         $insert->bindParam(':overview', $url);
         $insert->bindParam(':url_img', $urlImg);

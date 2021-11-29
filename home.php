@@ -74,15 +74,17 @@ include("sources/functions.php");
         <div class="row padding">
 
             <?php
+
+            //On récupère les data de l'API
             $apiKey = '0374b79f54a000c4b81f9c12db4437df';
-            $urlMoviesPopular = "https://api.themoviedb.org/3/movie/popular?api_key=" . $apiKey . "&language=en-US&page=1";
+            $urlMoviesPopular = "https://api.themoviedb.org/3/movie/popular?api_key=" . $apiKey . "&language=en-US&page=2";
 
 
             $responseMovies = requestAPI($urlMoviesPopular);
             $moviesArray = $responseMovies->results;
             $countMovies = count($moviesArray);
 
-            //Ajout des data dans les tables;
+            //On récupère et on ajoute tous les films sur la page
             for ($i = 0; $i < $countMovies; $i++) {
                 $title = $moviesArray[$i]->original_title;
                 $id = $moviesArray[$i]->id;
@@ -95,8 +97,8 @@ include("sources/functions.php");
                 $responseVideo = requestAPI($urlVideo);
                 $videoArray = $responseVideo->results;
                 $video_key = $videoArray[0]->key;
-
             ?>
+            <!-- On crée les cards de chaque film -->
                 <div class="col-md-3">
                     <div class="card shadowcard">
                         <img class="card-img-top" src="<?php print($urlPoster) ?>">
@@ -116,7 +118,7 @@ include("sources/functions.php");
 
     <!--Footer-->
 
-<?php include_once('sources/footer.php'); ?>
+    <?php include_once('sources/footer.php'); ?>
 
 </body>
 

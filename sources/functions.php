@@ -1,5 +1,6 @@
 <?php
-include("config.php");
+
+include("../sources/config.php");
 
 function filtreSaisie($saisie)
 {
@@ -20,10 +21,6 @@ function requestApi($url){
     curl_close($curl);
     $response = json_decode($movies);
     return $response;
-}
-
-function recupDataMovies(){
-    
 }
 
 ?>
