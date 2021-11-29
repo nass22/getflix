@@ -23,6 +23,7 @@
                     <a class="nav-link" href="#">My list</a>
                 </li>
             </ul>
+    
         </div>
     </div>
 </nav>

@@ -31,6 +31,8 @@ include("sources/functions.php");
         <form style="max-width: 300px; margin:auto;" action="login.php" method="post">
 
             <h1 class="h3 mb-3 font-weight-normal"> LOG IN </h1>
+            <p id="badPw"></p>
+            
             <label for="username" class="sr-only"> </label>
             <input type="text" name="username" id="emailAdress" class="form-control" placeholder="Username" required autofocus>
 
@@ -63,7 +65,10 @@ include("sources/functions.php");
         if (password_verify($inputPassword, $pwHashed)) {
             header("Location:home.php");
         } else {
-            echo 'Votre login/mot de passe est incorrect!';
+            echo '<script>
+            let badPass=document.getElementById(\'badPw\');
+            badPass.innerHTML=\'Votre login/mot de passe est incorrect!\';
+            </script>';             
         }
     }
     ?>

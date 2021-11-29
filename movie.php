@@ -29,19 +29,14 @@ $title=$_GET['title'];
 <?php include_once('sources/header.php'); ?>
 
 
-<!--Logo Img-->
-<img class = "mt-5"  id = "logo" src= "img/logonetflix.png" height="180" alt="Getflix Logo">
-
-
-
 <!--Cards-->
 
 <div class="row justify-content-center">
     <div class="col-md-6">
         <h4 class="card-title-1"><?php echo $title ?></h4>
         <hr>
-        <div class="card shadowcard">
-            <div class="col-img-top"><?php echo '<iframe width="590" height="315" src="https://www.youtube.com/embed/'.$videoKey.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; ?></div>
+        <div class="card shadowcard ">
+            <div><?php echo '<iframe style="display: block; margin: auto; margin-top:20px;" width="560" height="315" src="https://www.youtube.com/embed/'.$videoKey.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; ?></div>
                 <div class="col-md-12">
                   <div class="comments">
                     <table class="table">
@@ -63,8 +58,6 @@ $title=$_GET['title'];
 </div>
 
 
-
-  
 <!--Footer-->    
 
 <?php include_once('sources/footer.php'); ?>

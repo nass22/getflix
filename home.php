@@ -84,7 +84,7 @@ include("sources/functions.php");
             $moviesArray = $responseMovies->results;
             $countMovies = count($moviesArray);
 
-            //On récupère et on ajoute tous les films sur la page
+            //On récupère et on ajoute tous les films sur la page Home
             for ($i = 0; $i < $countMovies; $i++) {
                 $title = $moviesArray[$i]->original_title;
                 $id = $moviesArray[$i]->id;
@@ -102,10 +102,10 @@ include("sources/functions.php");
                 <div class="col-md-3">
                     <div class="card shadowcard">
                         <img class="card-img-top" src="<?php print($urlPoster) ?>">
-                        <div class="card-body">
+                        <div class="card-body scroll-box">
                             <h4 class="card-title-1"><?php print($title) ?></h4>
                             <p class="card-text-1"><?php print($overview) ?></p>
-                            <a href="movie.php?key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-primary">Link</a>
+                            <a href="movie.php?key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-primary">Watch</a>
                         </div>
                     </div>
                 </div>
