@@ -1,6 +1,11 @@
 <?php
+session_start();
 include("sources/config.php");
 include("sources/functions.php");
+
+if(!isset($_SESSION['LOGGED_USER'])){
+    header("Location:index.php");
+} else {
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +29,9 @@ include("sources/functions.php");
 <body>
 
     <!---------Header--------->
-
+    
     <?php include_once('sources/header.php'); ?>
-
+    
     <!--Carousel-->
     <div class="container-fluid" height="400" id="bandeau">
         <div id="carouselExampleCaptions" class="carousel slide" height="400" data-bs-ride="carousel">
@@ -105,8 +110,8 @@ include("sources/functions.php");
                         <div class="card-body scroll-box">
                             <h4 class="card-title-1"><?php print($title) ?></h4>
                             <p class="card-text-1"><?php print($overview) ?></p>
-                            <a href="movie.php?key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-primary">Watch</a>
                         </div>
+                        <span class="card-text-1"><a href="movie.php?key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-primary">Watch</a></span>
                     </div>
                 </div>
 
@@ -121,5 +126,7 @@ include("sources/functions.php");
     <?php include_once('sources/footer.php'); ?>
 
 </body>
-
+<?php
+}
+?>
 </html>

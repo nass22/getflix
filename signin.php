@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("sources/config.php");
 include("sources/functions.php");
 ?>
@@ -77,6 +78,9 @@ include("sources/functions.php");
             $insert->bindParam(':email', $inputEmail);
             $insert->bindParam(':password', $cryptedPw);
             $insert->execute();
+
+            //On enregistre l'username en session
+            $_SESSION['LOGGED_USER'] = $inputUsername; 
             header("Location:home.php");
         }
     } else {

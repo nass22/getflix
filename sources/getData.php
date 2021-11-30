@@ -32,7 +32,6 @@ for($i=0;$i<$countMovies; $i++){
     $insert->bindParam('poster', $poster);
     $insert->bindParam('video_key', $video_key);
     $insert->execute();
-
 }
 
 ?>

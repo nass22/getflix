@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("sources/config.php");
 include("sources/functions.php");
 ?>
@@ -52,9 +53,12 @@ include("sources/functions.php");
 
     <?php
 
+    //On filtre les saisies pour éviter des injections js
     $inputLogin = filtreSaisie($_POST['username']);
     $inputPassword = filtreSaisie($_POST['password']);
     $cryptedPw = password_hash($inputPassword, PASSWORD_DEFAULT);
+
+    //On test si la variable existe et on va chercher dans la db le password de l'user
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $sqlQuery = 'SELECT password FROM login WHERE username=:username';
         $loginStm = $db->prepare($sqlQuery);
@@ -62,7 +66,9 @@ include("sources/functions.php");
         $loginStm->execute();
         $login = $loginStm->fetch();
         $pwHashed = $login[0];
+        // on vérifie le password de l'input et le pw dans la db
         if (password_verify($inputPassword, $pwHashed)) {
+            $_SESSION['LOGGED_USER'] = $inputLogin; //On enregistre l'username dans une session
             header("Location:home.php");
         } else {
             echo '<script>

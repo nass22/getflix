@@ -4,23 +4,12 @@
     background-color:rgba(0, 0, 0, 0.527);
 }
 
-#navbarSupportedContent{
-    margin-right: 500px;
-    color: white;
-}
-
-.nav-link{
-    color: white;
-    margin-left: 15px;
-}
 /*Body*/
 
 body {
     background-color: rgba(0, 0, 0, 0.925);
-    color: white;
-    font-family: "open sans";
+    font-family: 'Open Sans', sans-serif;
 }
-
 
 input[typye="email"] {
     border-bottom-left-radius: 0px;;
@@ -33,19 +22,17 @@ input[typye="password"] {
     border-top: 0px ;
 } 
 
-
-#bandeau {
-margin-top: 30px;
-margin-bottom: 50px;
-
-}
-
+/*Logo*/
 
 #logo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-   
+    height: 25%;
+    width: 30%;
+    position: static;
+    right: 31%;
+    margin-left: 34%;
+    margin-top: 20%;
+    justify-content: center;
 }
 
 .h3 {
@@ -54,8 +41,8 @@ margin-bottom: 50px;
     font-size: 40px;
 }
 
-
 /* Cards */
+
 .card-body {
     color: black;
 }
@@ -64,7 +51,7 @@ margin-bottom: 50px;
 margin-top: 20px;
 }
 
-.card-imd-top {
+.card-img-top {
 height: fit-content;
 }
 
@@ -76,6 +63,13 @@ height: fit-content;
 
 .card-title-1 {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+.card-text-1 {
+font-family:'Open Sans', sans-serif; 
+font-size: 15px;
 }
 
 .scroll-box {
@@ -84,4 +78,30 @@ height: fit-content;
     padding: 1rem
 }
 
+/*bouton d'envoi page Movie*/
+
+#submit {
+    float: right;
+    margin-top: 1rem;
+}
+
+/*Couleur p page Movie*/
+.white{
+    color: white;
+}
+
+/*Padding titre film page Movie*/
+.paddingTop{
+    padding-top: 60px;
+    color: white;
+}
+
+/*Margin search & dropdown*/
+#search {
+    margin-right: 1rem;
+}
+
+#account {
+    margin-right: 1rem;
+}
 

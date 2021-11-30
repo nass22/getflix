@@ -1,7 +1,7 @@
 <footer>
     <div class="container-fluid padding">
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-md-4 white">
                 <img class="footer-img" src="../img/logonetflix.png" height="55">
                 <hr class="light">
                 <p>02.86.677.666</p>
@@ -9,7 +9,7 @@
                 <p>56 Rue du streaming</p>
                 <p>1000, Brussels, Belgium.</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 white">
                 <hr class="light">
                 <p>INFOS</p>
                 <hr class="light">
@@ -17,7 +17,7 @@
                 <p>Some Informations</p>
                 <p>Some Informations</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 white">
                 <hr class="light">
                 <p>Legal information</p>
                 <hr class="light">
@@ -25,7 +25,7 @@
                 <p> Some information </p>
                 <p>Some information </p>
             </div>
-            <div class="col-12">
+            <div class="col-12 white">
                 <hr class="light">
                 <h5>&copy; Getflix.com</h5>
             </div>

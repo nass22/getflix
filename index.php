@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_SESSION['LOGGED_USER'])){
+        header("Location:home.php");
+    } else {
+    ?>   
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,5 +49,7 @@
 <footer class="col col-xl-12 bg-dark py-2 mt-2  border-white text-center text-white font-weight-bold fs-4 ">
     <p>NETFLIX STOLE OUR IDEA </p>
 </footer>
-
+<?php
+    }
+?>
 </html>
