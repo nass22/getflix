@@ -25,12 +25,12 @@ include("sources/functions.php");
 <body>
 
 
-    <img class="mt-4 mb-4" id="logo" src="img/logonetflix.png" height="180" alt="Getflix Logo">
+    <img class="mt-4 mb-4" id="logo" src="img/getflixlogo.png" height="180" alt="Getflix Logo">
 
     <!-----Sign In------>
 
     <div class="text-center mt-5" id="signIn">
-        <form style="max-width: 300px; margin:auto;" method="post" action="signin.php">
+        <form style="max-width: 300px; margin:auto;" method="post" action="signin.php" class="white">
 
             <h1 class="h3 mb-3 font-weight-normal"> SIGN IN </h1>
             <p id="badPw1"></p>

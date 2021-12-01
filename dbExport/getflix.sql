@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 29 nov. 2021 à 13:10
+-- Généré le : mer. 01 déc. 2021 à 09:14
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `getflix`
 --
+CREATE DATABASE IF NOT EXISTS `getflix` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `getflix`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +31,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `comment` varchar(250) NOT NULL,
+  `comment` text NOT NULL,
   `author` varchar(50) NOT NULL,
   `date` datetime NOT NULL,
   `id_movie` int(11) NOT NULL,

@@ -2,7 +2,7 @@
     <div class="container-fluid padding">
         <div class="row text-center">
             <div class="col-md-4 white">
-                <img class="footer-img" src="../img/logonetflix.png" height="55">
+                <img class="footer-img" src="../img/getflixlogo.png" height="55">
                 <hr class="light">
                 <p>02.86.677.666</p>
                 <p>Getflix@gmailcom</p>
