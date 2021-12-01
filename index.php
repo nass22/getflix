@@ -30,7 +30,7 @@ if (isset($_SESSION['LOGGED_USER'])) {
 
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark py-0 fixed-top" id="navbar">
             <div class="container-fluid" id="header">
-                <a href="https://www.netflix.com/be-en/ " class="navbar-brand fs-1">GETFLIX</a>
+                <a href="home.php" class="navbar-brand fs-1">GETFLIX</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -41,6 +41,27 @@ input[typye="password"] {
     font-size: 40px;
 }
 
+/*Carousel*/
+
+#bandeau {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    }
+    
+    /* NEWWWWW le titre du carousel !!!!*/
+    .movietitle {
+    text-shadow: 4px 3px 3px rgb(0, 0, 0);
+    font-size: 60px;
+    margin-bottom: 70px;
+    }
+    
+    /* NEWWWW Le Titre pour les formulaires*/
+    .h3 {
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 40px;
+    }
+
 /* Cards */
 
 .card-body {
@@ -90,6 +111,7 @@ font-size: 15px;
     color: white;
 }
 
+
 /*Padding titre film page Movie*/
 .paddingTop{
     padding-top: 60px;
@@ -108,3 +130,33 @@ font-size: 15px;
 #signin {
     margin-right: 900px;
    }
+
+
+/*New !! Profile page*/
+.container-profilepic {
+    width: 300px;
+    height: 300px;
+  
+}
+.photo-preview {
+    background-image: url( https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80 );
+    background-size: cover;
+    background-position: center;
+}
+.middle-profilepic {
+    background-color: rgba( 255,255,255, 0.69 );
+}
+.container-profilepic:hover .middle-profilepic {
+    display: flex!important;
+    cursor: pointer;
+}
+
+#pic {
+    display: flex;
+    justify-content: center;
+}
+
+#profilepage {
+    display: flex;
+    justify-content: center;
+}
