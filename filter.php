@@ -18,7 +18,7 @@ if(!isset($_SESSION['LOGGED_USER'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" href="sources/style.css">
-    <title>GETFLIX Search</title>
+    <title>GETFLIX Movies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
@@ -40,13 +40,12 @@ if(!isset($_SESSION['LOGGED_USER'])){
             <?php
 
             //On récupère les data de l'API
-            $search = $_POST['search'];
-            $searchUrl= str_replace(' ', '%20', $search);
-
+            $idGenre=$_GET['id'];
+            $genreTitle=$_GET['name'];
             $apiKey = '0374b79f54a000c4b81f9c12db4437df';
-            $urlMoviesTop = "https://api.themoviedb.org/3/search/multi?api_key=".$apiKey."&language=en-US&query=".$searchUrl."&page=1&include_adult=false";
+            $urlByGenre = "https://api.themoviedb.org/3/discover/movie?api_key=0374b79f54a000c4b81f9c12db4437df&with_genres=".$idGenre;
 
-            $responseMovies = requestAPI($urlMoviesTop);
+            $responseMovies = requestAPI($urlByGenre);
             $moviesArray = $responseMovies->results;
             $countMovies = count($moviesArray);
 
