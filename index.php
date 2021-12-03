@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php
 session_start();
 if (isset($_SESSION['LOGGED_USER'])) {
@@ -67,7 +72,27 @@ if (isset($_SESSION['LOGGED_USER'])) {
             <button type="button" class="btn btn-danger" style="background-color: red; font-size: 20px; padding-left: 2rem; padding-right: 2rem;" onclick="window.location.href='login.php'">LOG IN</button>
         </div>
 
+        
+<!--Mailchimp SESSION-->
+<?php session_start(); // place it on the top of the script ?>
+<?php
+    $statusMsg = !empty($_SESSION['msg'])?$_SESSION['msg']:'';
+    unset($_SESSION['msg']);
+    echo $statusMsg;
+?>
+        <!---Mailchimp FORM-->
+        <div class="text-center w-25 " id="newsletter">
+        <form  style="max-widht: 100px; margin:auto;"method="post" action="action.php" class="white">
+        <h2 class="h3 mb-3 font-weight-normal"> SUBSCRIBE TO OUR NEWSLETTER </h2>
+            <p id="badPw1"></p>
+    <p><label for="fname" class="sr-only"> </label><input type="text" name="fname" class="form-control" placeholder="First Name" required /></p>
+    <p><label for="fname" class="sr-only">  </label><input type="text" name="lname" class="form-control" placeholder="Last Name" required /></p>
+    <p><label for="fname" class="sr-only"></label><input type="text" name="email" class="form-control" placeholder="email" required /></p>
+    <p><input type="submit" name="submit" value="SUBSCRIBE"/></p>
+</form>
+</div>
 
+ 
         <!--Footer-->
     <?php
 
