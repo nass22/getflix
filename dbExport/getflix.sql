@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 03 déc. 2021 à 20:42
+-- Généré le : ven. 03 déc. 2021 à 21:40
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -35,15 +35,6 @@ CREATE TABLE `comments` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `comments`
---
-
-INSERT INTO `comments` (`id`, `id_movie`, `id_user`, `comment`, `date`) VALUES
-(22, 1930, 1, 'azdazda', '2003-12-21 21:06:21'),
-(23, 1930, 1, 'azdazda', '2003-12-21 21:07:00'),
-(24, 1930, 1, 'azdazda', '2003-12-21 21:07:34');
-
 -- --------------------------------------------------------
 
 --
@@ -56,14 +47,6 @@ CREATE TABLE `login` (
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `login`
---
-
-INSERT INTO `login` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'admin@exemple.com', '$2y$10$SEQnx9h7rFs2Othds0ZbIOf/37lbOznS9vIsjGHNXi0igpWgYz8gC'),
-(2, 'sqmiR', 'sqmiR_22@hotmail.com', '$2y$10$9upqVY0sjR/jFH4NePNhQ.ZN2tliJUk6ZhtLsKmyBZdCH2Ov9I81u');
 
 -- --------------------------------------------------------
 
@@ -131,7 +114,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `login`
