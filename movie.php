@@ -52,74 +52,115 @@ $username = $_SESSION['LOGGED_USER'];
             <form action="movie.php?id=<?php echo $idMovie ?>&amp;key=<?php echo $videoKey ?>&amp;title=<?php echo $title ?>" method="post">
               <label for="comment" class="sr-only"> </label>
               <input type="text" name="comment" id="comment" class="form-control" placeholder="Your comment goes here." height="300%"></td>
-              <button id="submit" class="btn btn-dark float-right" name="submitBtn">Submit</button>
+              <input type="submit" id="submit" class="btn btn-dark float-right" name="submitBtn" value="Submit" />
             </form>
           </div>
-          
+
           <?php
+          $submit = $_POST['submitBtn'];
+          if (!empty($submit)) {
+            //On récupère l'id de l'utilisateur grace à son username
+            $sqlQueryUser = 'SELECT id FROM login WHERE username=:username';
+            $usernameStm = $db->prepare($sqlQueryUser);
+            $usernameStm->bindParam(':username', $username);
+            $usernameStm->execute();
+            $usernameArray = $usernameStm->fetch();
+            $idUsername = $usernameArray[0]; //id de l'utilisateur
 
-         
-              //On récupère l'id de l'utilisateur grace à son username
-              $sqlQueryUser = 'SELECT id FROM login WHERE username=:username';
-              $usernameStm = $db->prepare($sqlQueryUser);
-              $usernameStm->bindParam(':username', $username);
-              $usernameStm->execute();
-              $usernameArray = $usernameStm->fetch();
-              $idUsername = $usernameArray[0]; //id de l'utilisateur
+            //On récupère la date et l'heure du jour
+            date_default_timezone_set('Europe/Paris');
+            $date = date('d-m-y G:i:s');
 
-              //On récupère la date et l'heure du jour
-              date_default_timezone_set('Europe/Paris');
-              $date = date('d-m-y G:i:s');
+            //On récupère le comment
+            $commentMovie = $_POST['comment'];
 
-              //On récupère le comment
-              $commentMovie = $_POST['comment'];
+            //On insère toutes les données dans la table
 
-              //On insère toutes les données dans la table
+            $insComment = $db->prepare('INSERT INTO comments(id_movie, id_user, comment, date) VALUES (:id_movie, :id_user, :comment, :date)');
+            $insComment->bindParam(':id_movie', $idMovie);
+            $insComment->bindParam(':id_user', $idUsername);
+            $insComment->bindParam(':comment', $commentMovie);
+            $insComment->bindParam(':date', $date);
+            $insComment->execute();
 
-              $insComment = $db->prepare('INSERT INTO comments(id_movie, id_user, comment, date) VALUES (:id_movie, :id_user, :comment, :date)');
-              $insComment->bindParam(':id_movie', $idMovie);
-              $insComment->bindParam(':id_user', $idUsername);
-              $insComment->bindParam(':comment', $commentMovie);
-              $insComment->bindParam(':date', $date);
-              $insComment->execute();
+            //On récupère le commentaire dans la db et on l'affiche
+            $sqlQueryComment = 'SELECT comment,id_user,date FROM comments WHERE id_movie=:id_movie ORDER BY date desc';
+            $commentStm = $db->prepare($sqlQueryComment);
+            $commentStm->bindParam(':id_movie', $idMovie);
+            $commentStm->execute();
+            $commentArray = $commentStm->fetchAll(PDO::FETCH_ASSOC);
 
-              //On récupère le commentaire dans la db et on l'affiche
-              $sqlQueryComment = 'SELECT comment,id_user,date FROM comments ORDER BY date desc';
-              $commentStm = $db->prepare($sqlQueryComment);
-              $commentStm->execute();
-              $commentArray = $commentStm->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($commentArray as $elem) {
+              $commentUser = $elem['comment'];
+              $usernameId = $elem['id_user'];
+              $dateCom = $elem['date'];
 
-              foreach ($commentArray as $elem) {
-                $commentUser = $elem['comment'];
-                $usernameId = $elem['id_user'];
-                $dateCom = $elem['date'];
+              $sqlQueryUsername = 'SELECT username FROM login WHERE id=:id';
+              $stm = $db->prepare($sqlQueryUsername);
+              $stm->bindParam(':id', $usernameId);
+              $stm->execute();
+              $userArray = $stm->fetch();
+              $usernameCom = $userArray[0];
 
-                $sqlQueryUsername = 'SELECT username FROM login WHERE id=:id';
-                $stm = $db->prepare($sqlQueryUsername);
-                $stm->bindParam(':id', $usernameId);
-                $stm->execute();
-                $userArray = $stm->fetch();
-                $usernameCom = $userArray[0];
-
-                //On implemente dans le html
+              //On implemente dans le html
           ?>
-                <div class="comments">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col"><?php echo $usernameCom." (".$dateCom.")" ?></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><?php echo $commentUser ?></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="comments">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><?php echo $usernameCom . " (" . $dateCom . ")" ?></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $commentUser ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
           <?php
-              }
-          ?> 
+            }
+          } else {
+
+            //On récupère le commentaire dans la db et on l'affiche
+            $sqlQueryComment = 'SELECT comment,id_user,date FROM comments WHERE id_movie=:id_movie ORDER BY date desc';
+            $commentStm = $db->prepare($sqlQueryComment);
+            $commentStm->bindParam(':id_movie', $idMovie);
+            $commentStm->execute();
+            $commentArray = $commentStm->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($commentArray as $elem) {
+              $commentUser = $elem['comment'];
+              $usernameId = $elem['id_user'];
+              $dateCom = $elem['date'];
+
+              $sqlQueryUsername = 'SELECT username FROM login WHERE id=:id';
+              $stm = $db->prepare($sqlQueryUsername);
+              $stm->bindParam(':id', $usernameId);
+              $stm->execute();
+              $userArray = $stm->fetch();
+              $usernameCom = $userArray[0];
+
+              //On implemente dans le html
+          ?>
+              <div class="comments">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><?php echo $usernameCom . " (" . $dateCom . ")" ?></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $commentUser ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          <?php
+            }
+          }
+          ?>
         </div>
       </div>
     </div>
