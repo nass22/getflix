@@ -65,15 +65,9 @@ input[typye="password"] {
 /* Cards */
 
 .card-body {
+    height: 100% ;
     color: black;
-}
 
-.col-md-3{
-margin-top: 20px;
-}
-
-.card-img-top {
-height: fit-content;
 }
 
 .col-md-6 {
@@ -159,4 +153,45 @@ font-size: 15px;
 #profilepage {
     display: flex;
     justify-content: center;
+}
+
+
+
+/*NEEEEEEWWWW MOVIE PAGE - Rend la page des vidéos responsive*/
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+/*NEEEEW -Met les images des cards à la même hauteur */
+.card-img-top {
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+}
+
+
+/*NEEEW - ajustement des cards */
+
+#cards {
+    margin-top: 80px;
+}
+
+
+.col-md-3 {
+    margin-top: 15px;
 }

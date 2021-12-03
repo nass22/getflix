@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mer. 01 déc. 2021 à 09:14
+-- Généré le : ven. 03 déc. 2021 à 20:42
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `getflix`
 --
-CREATE DATABASE IF NOT EXISTS `getflix` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `getflix`;
 
 -- --------------------------------------------------------
 
@@ -31,12 +29,20 @@ USE `getflix`;
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  `author` varchar(50) NOT NULL,
-  `date` datetime NOT NULL,
   `id_movie` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `comments`
+--
+
+INSERT INTO `comments` (`id`, `id_movie`, `id_user`, `comment`, `date`) VALUES
+(22, 1930, 1, 'azdazda', '2003-12-21 21:06:21'),
+(23, 1930, 1, 'azdazda', '2003-12-21 21:07:00'),
+(24, 1930, 1, 'azdazda', '2003-12-21 21:07:34');
 
 -- --------------------------------------------------------
 
@@ -50,6 +56,14 @@ CREATE TABLE `login` (
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `email`, `password`) VALUES
+(1, 'admin', 'admin@exemple.com', '$2y$10$SEQnx9h7rFs2Othds0ZbIOf/37lbOznS9vIsjGHNXi0igpWgYz8gC'),
+(2, 'sqmiR', 'sqmiR_22@hotmail.com', '$2y$10$9upqVY0sjR/jFH4NePNhQ.ZN2tliJUk6ZhtLsKmyBZdCH2Ov9I81u');
 
 -- --------------------------------------------------------
 
@@ -88,7 +102,8 @@ CREATE TABLE `users` (
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_id_user_id` (`id_user`);
 
 --
 -- Index pour la table `login`
@@ -116,13 +131,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `movies`
@@ -135,6 +150,16 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `fk_id_user_id` FOREIGN KEY (`id_user`) REFERENCES `login` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -35,7 +35,7 @@
                 <li class="nav-item p-2 link-menu ">
                     <a class="nav-link" href="series.php">Series</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown p-2">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Genre
                     </a>
@@ -47,11 +47,9 @@
                                 ?>
 
                                 <li><a class="dropdown-item" href="../filter.php?id=<?php echo $id ?>&amp;name=<?php echo $genreName ?>"><?php echo $genreName ?></a></li>
-
                         <?php        
                             }
                         ?>
-                        
                         
                     </ul>
                 </li>
