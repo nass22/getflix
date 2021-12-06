@@ -15,6 +15,7 @@ ____
  - HTML
  - BOOTSRAP5
  - CSS
+ - JAVASCRIPT
  - PHP 
 
 ![HOLA](https://media.giphy.com/media/3oriNLx3dUqFgVi86I/giphy.gif)
@@ -57,10 +58,6 @@ Once the user is loged in, he have the option to disconnect on the far right of 
  -----
 
 ##  **User's rights and options**
-
-We used the PDO method to have acces to the database. 
-
-## (Samir, tu pourrais mieux expliquer ici ?)
 
 The user have differents options on the home page. We included different categories for movies and series and we also added a search bar to sort by filters such as movies series or people. 
 
