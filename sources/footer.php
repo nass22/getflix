@@ -15,15 +15,14 @@
                 <hr class="light">
                 <p>Some Informations</p>
                 <p>Some Informations</p>
-                <p>Some Informations</p>
             </div>
             <div class="col-md-4 white">
                 <hr class="light">
-                <p>Legal information</p>
+                <p>INFOS</p>
                 <hr class="light">
                 <p> Mention legal </p>
                 <p> Some information </p>
-                <p>Some information </p>
+                <a href="newsletter.php" style="color:white;"> Getflix Newsletter </a>
             </div>
             <div class="col-12 white">
                 <hr class="light">

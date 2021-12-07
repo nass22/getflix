@@ -36,7 +36,7 @@
                     <a class="nav-link" href="series.php">Series</a>
                 </li>
                 <li class="nav-item dropdown p-2">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Genre
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -50,7 +50,7 @@
                         <?php        
                             }
                         ?>
-                        
+                        x
                     </ul>
                 </li>
             </ul>

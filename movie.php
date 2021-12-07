@@ -51,7 +51,7 @@ $username = $_SESSION['LOGGED_USER'];
           <div class="comments">
             <form action="movie.php?id=<?php echo $idMovie ?>&amp;key=<?php echo $videoKey ?>&amp;title=<?php echo $title ?>" method="post">
               <label for="comment" class="sr-only"> </label>
-              <input type="text" name="comment" id="comment" class="form-control" placeholder="Your comment goes here." height="300%"></td>
+              <input type="text" name="comment" id="comment" class="form-control" placeholder="Your comment goes here." height="300%" required></td>
               <input type="submit" id="submit" class="btn btn-dark float-right" name="submitBtn" value="Submit" />
             </form>
           </div>

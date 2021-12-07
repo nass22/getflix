@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 03 déc. 2021 à 21:40
+-- Généré le : mar. 07 déc. 2021 à 12:33
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `getflix`
 --
+CREATE DATABASE IF NOT EXISTS `getflix` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `getflix`;
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `movies`

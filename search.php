@@ -72,7 +72,8 @@ if(!isset($_SESSION['LOGGED_USER'])){
                             <h4 class="card-title-1"><?php print($title) ?></h4>
                             <p class="card-text-1"><?php print($overview) ?></p>
                         </div>
-                        <span class="card-text-1"><a href="movie.php?key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-primary">Watch</a></span>
+                        <span class="card-text-1"><a href="movie.php?id=<?php echo $id ?>&amp;key=<?php echo $video_key ?>&amp;title=<?php echo $title ?>" class="btn btn-dark btn-lg" style=" display: flex;
+                            justify-content: center;">Watch</a></span>
                     </div>
                 </div>
 
