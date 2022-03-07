@@ -23,19 +23,19 @@ ____
 ------
 # 🧠 Mindmap
 To make the working road more easy , We came with idea to use mind map to make the work more clear and whats better for the next step.
-![Mindmap](../img/getflix2x.png)
+![Mindmap](/img/getflix2x.png)
 
 -----
 # 🎨 Front-End 
 For better responsive website and work faster we used (BOOTSTRAP5)
 , the main goal is to make the website responsive and easy to navigate in most simple way and the most comfortable for the eyes. 
 
-![INCASE](../img/https://media.giphy.com/media/YFkpsHWCsNUUo/giphy.gif)
+![INCASE](/img/https://media.giphy.com/media/YFkpsHWCsNUUo/giphy.gif)
  
 
 To display the API properly, we used the cards (shadowcard) from BOOTSRAP5.
 
-![CARDS](../img/cards.png)
+![CARDS](/img/cards.png)
 
 
 -----
@@ -44,15 +44,15 @@ To display the API properly, we used the cards (shadowcard) from BOOTSRAP5.
 ## **The session system**
 For our session system: (registration, connection) we did a landing page with our logo and to options: one to sign up and an other to log in. You can also log in from the header as well.
 
-![LANDING](../img/landing.png)
+![LANDING](/img/landing.png)
 
 When the user arrives on the sign up page, all the informations are sent to the phpMyAdmin and the password is hached. Once the user is signed up he can log in. The user also can chose the "remember me" option.
 
-![SIGNUP](../img/signin.png)
+![SIGNUP](/img/signin.png)
 
 Once the user is loged in, he have the option to disconnect on the far right of the page. And he can also go to the edit profile page. 
 
-![HOMEPAGE](../img/homepage.png)
+![HOMEPAGE](/img/homepage.png)
 
 
  -----
@@ -64,7 +64,7 @@ The user have differents options on the home page. We included different categor
 
 Once the user clicked the link from he's choice, he's directed to the "movie page" where he as acces to the trailer and can add a comment. 
 
-![COMMENT](../img/moviepage.png)
+![COMMENT](/img/moviepage.png)
 
 ----
 # 🐸 Thank's for watching !
